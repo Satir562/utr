@@ -1,0 +1,45 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <script src="https://kit.fontawesome.com/cebf0c09a6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'my_blog/css/index.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
+    <link rel="stylesheet" href="{% static 'my_catalog/css/catalog.css' %}">
+</head>
+<body>
+
+    <aside>
+
+        <a href="{% url 'home' %}"><img class="logo " src="{% static 'my_blog/img/wepik-professional-minimalist-booky-book-fair-logo-20240306073937J9L7.png'  %} " alt="book"></a><br>
+
+
+        <div class="cont">
+            <h3>Меню сайта</h3>
+        <ul>
+            <a href="{% url 'home' %}"><li><i class="fa-solid fa-house"></i>Главная</li></a>
+            <a href="{% url 'about' %}"><li><i class="fa-solid fa-address-card"></i>О нас</li></a>
+            <a href="{% url 'catalog_home' %}"><li><i class="fa-solid fa-file-contract"></i>Каталог</li></a>
+            <a href="{% url 'create' %}"><li><button class="btn btn-info"><i class="fas fa-plus-circle">Добавить рассказ</i>
+            <!-- /.fas --></button></li></a>
+
+        </ul>
+        </div>
+
+
+
+
+    </aside>
+    <main>
+       {% block content %}
+        {% endblock %}
+    </main>
+
+</body>
+</html>

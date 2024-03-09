@@ -1,0 +1,18 @@
+{% extends 'my_blog/layout.html' %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+    <div class="features">
+        <h1 class="title">{{ post.title }}</h1>
+        <p class="content">{{ post.content }}</p>
+        <p class="datetime">{{ post.date_publisher }}</p>
+        <a href="{% url 'story-delete' post.id %}" class="btn btn-danger">Удалить</a>
+        <a href="{% url 'story-update' post.id %}" class="btn btn-warning">Редактировать</a>
+
+    </div>
+
+{% endblock %}
+
+{% block title %}
+{{ post.title }}
+{% endblock %}

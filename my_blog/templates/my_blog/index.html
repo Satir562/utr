@@ -1,0 +1,17 @@
+{% extends 'my_blog/layout.html' %}
+
+{% block content %}
+
+    <div class="features">
+        <h1 class="title">The world of stories</h1>
+        <p class="hello">Привет! Добро пожаловать на сайт! Чтобы ознакомится с каталогом нажмите на кнопку</p>
+        <a href="{% url 'catalog_home' %}"><button class="btn btn-warning">Каталог</button></a>
+        <!-- /.btn -->
+    
+    </div>
+
+{% endblock %}
+
+{% block title %}
+    Главная
+{% endblock %}
